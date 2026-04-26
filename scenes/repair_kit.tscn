@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://r1repair"]
+
+[ext_resource type="Script" path="res://scripts/pickup.gd" id="1_pickup"]
+[ext_resource type="Script" path="res://scripts/repair_kit_visual.gd" id="2_visual"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_Repair"]
+size = Vector2(24, 24)
+
+[node name="RepairKit" type="Area2D" groups=["pickup"]]
+collision_layer = 8
+collision_mask = 1
+script = ExtResource("1_pickup")
+pickup_type = "repair"
+amount = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_Repair")
+
+[node name="Visual" type="Node2D" parent="."]
+script = ExtResource("2_visual")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

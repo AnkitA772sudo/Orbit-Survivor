@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://p1planet"]
+
+[ext_resource type="Script" path="res://scripts/planet.gd" id="1_planet"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_Planet"]
+
+[node name="Planet" type="StaticBody2D" groups=["gravity_sources"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_planet")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_Planet")
+
+[node name="GravityArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityArea"]
+

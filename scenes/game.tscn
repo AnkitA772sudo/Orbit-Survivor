@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://g1game"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_game"]
+[ext_resource type="PackedScene" uid="uid://c1player" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://h1hud" path="res://scenes/hud.tscn" id="3_hud"]
+[ext_resource type="PackedScene" uid="uid://p1pause" path="res://scenes/pause_menu.tscn" id="4_pause"]
+[ext_resource type="PackedScene" uid="uid://g1gameover" path="res://scenes/game_over.tscn" id="5_go"]
+[ext_resource type="Script" path="res://scripts/starfield.gd" id="6_starfield"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="7_spawner"]
+[ext_resource type="PackedScene" uid="uid://p1planet" path="res://scenes/planet.tscn" id="8_planet"]
+[ext_resource type="PackedScene" uid="uid://bh1blackhole" path="res://scenes/black_hole.tscn" id="9_bh"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_game")
+
+[node name="Starfield" type="Node2D" parent="."]
+script = ExtResource("6_starfield")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(640, 360)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0, 0)
+limit_left = -2000
+limit_top = -2000
+limit_right = 2000
+limit_bottom = 2000
+limit_smoothed = true
+
+[node name="Planets" type="Node2D" parent="."]
+
+[node name="Planet1" parent="Planets" instance=ExtResource("8_planet")]
+position = Vector2(300, 300)
+planet_color = Color(0.2, 0.5, 0.9, 1)
+radius = 55.0
+
+[node name="Planet2" parent="Planets" instance=ExtResource("8_planet")]
+position = Vector2(1000, 500)
+planet_color = Color(0.8, 0.3, 0.2, 1)
+radius = 70.0
+
+[node name="Planet3" parent="Planets" instance=ExtResource("8_planet")]
+position = Vector2(700, 150)
+planet_color = Color(0.3, 0.7, 0.5, 1)
+radius = 45.0
+
+[node name="Planet4" parent="Planets" instance=ExtResource("8_planet")]
+position = Vector2(1100, 200)
+planet_color = Color(0.7, 0.5, 0.2, 1)
+radius = 50.0
+
+[node name="Planet5" parent="Planets" instance=ExtResource("8_planet")]
+position = Vector2(400, 550)
+planet_color = Color(0.5, 0.3, 0.7, 1)
+radius = 65.0
+has_rings = true
+
+[node name="Planet6" parent="Planets" instance=ExtResource("8_planet")]
+position = Vector2(900, 650)
+planet_color = Color(0.6, 0.8, 0.9, 1)
+radius = 40.0
+
+[node name="BlackHole" parent="." instance=ExtResource("9_bh")]
+position = Vector2(100, 600)
+radius = 35.0
+
+[node name="HUD" parent="." instance=ExtResource("3_hud")]
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource("7_spawner")
+
+[node name="SpawnTimer" type="Timer" parent="Spawner"]
+wait_time = 0.8
+autostart = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_pause")]
+
+[node name="GameOver" parent="." instance=ExtResource("5_go")]
+
+[connection signal="timeout" from="Spawner/SpawnTimer" to="Spawner" method="_on_spawn_timer_timeout"]

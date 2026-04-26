@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://m1meteor"]
+
+[ext_resource type="Script" path="res://scripts/meteor.gd" id="1_meteor"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_Meteor"]
+radius = 7.0
+
+[node name="Meteor" type="Area2D" groups=["hazard", "meteor"]]
+collision_layer = 4
+collision_mask = 1
+script = ExtResource("1_meteor")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_Meteor")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+

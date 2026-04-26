@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://b2mainmenu"]
+
+[ext_resource type="Script" uid="uid://b5p27unheyd12" path="res://scripts/main_menu.gd" id="1_menu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_MenuBg"]
+bg_color = Color(0.02, 0.02, 0.06, 1)
+
+[node name="MainMenu" type="Control" unique_id=698106862]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="Panel" parent="." unique_id=2081943507]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_MenuBg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=928912012]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -420.0
+offset_top = -190.0
+offset_right = -20.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer" unique_id=746045332]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "ORBIT SURVIVOR"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="VBoxContainer" unique_id=2047597903]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "High Score: 0"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1371549922]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "PLAY"
+
+[node name="HowToPlayButton" type="Button" parent="VBoxContainer" unique_id=826588532]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "HOW TO PLAY"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=886413226]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "QUIT"
+
+[node name="HowToPlayPanel" type="Panel" parent="." unique_id=1799573444]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 300.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HowToPlayPanel" unique_id=1692988090]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HowToPlayPanel/VBoxContainer" unique_id=495245112]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "How to Play"
+horizontal_alignment = 1
+
+[node name="Info" type="Label" parent="HowToPlayPanel/VBoxContainer" unique_id=948682622]
+layout_mode = 2
+text = "W / UP    = Thrust
+A / LEFT  = Rotate Left
+D / RIGHT = Rotate Right
+SHIFT / SPACE = Boost
+ESC / P   = Pause
+
+- Use gravity slingshots around planets
+- Avoid meteors, asteroids, and solar flares
+- Collect fuel, repair kits, and upgrades
+- Survive as long as possible!"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="HowToPlayPanel/VBoxContainer" unique_id=1758284528]
+layout_mode = 2
+text = "CLOSE"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/HowToPlayButton" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HowToPlayPanel/VBoxContainer/CloseButton" to="." method="_on_close_how_to_play_pressed"]
