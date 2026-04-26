@@ -1,83 +1,68 @@
-# Orbit Survivor
+Orbit Survivor 🚀☄️
 
-A physics-based sci-fi survival game built in **Godot 4**.
-Pilot a small spaceship trapped near a dying star and survive using gravity slingshots around planets.
+Master gravity. Defy the dying star. Survive the impossible.
 
-## Controls
+Orbit Survivor is a fast-paced sci-fi survival game where you pilot a lone spacecraft trapped in a collapsing star system. Use planetary gravity to slingshot through space, dodge deadly hazards, gather resources, and survive as long as possible.
 
-| Key | Action |
-|-----|--------|
-| W / UP | Thrust |
-| A / LEFT | Rotate Left |
-| D / RIGHT | Rotate Right |
-| SHIFT / SPACE | Boost |
-| ESC / P | Pause |
+Unlike traditional space games, movement is driven by orbital physics and momentum, turning every escape into a skill-based challenge.
 
-## Features
+🌌 Features
 
-- **Gravity Physics** - Realistic planetary gravity pulls; use orbital slingshots to maneuver
-- **Momentum-Based Flight** - Rotate and thrust with fuel management
-- **Hazards** - Meteors, asteroids, solar flares, and black holes
-- **Upgrades** - Thrusters, shields, fuel capacity, gravity stabilizer
-- **Progressive Difficulty** - Hazards increase over time
-- **High Score** - Persistent high score saved locally
+Unique Gravity Slingshot Gameplay
 
-## Project Structure
+Use the pull of planets to gain momentum
 
-```
-Main game/
-├── project.godot          # Godot project settings
-├── export_presets.cfg     # HTML5 export preset
-├── scripts/               # All GDScript files
-│   ├── global.gd
-│   ├── main_menu.gd
-│   ├── game.gd
-│   ├── player.gd
-│   ├── planet.gd
-│   ├── black_hole.gd
-│   ├── meteor.gd
-│   ├── asteroid.gd
-│   ├── solar_flare.gd
-│   ├── pickup.gd
-│   ├── spawner.gd
-│   ├── hud.gd
-│   ├── pause_menu.gd
-│   ├── game_over.gd
-│   └── starfield.gd
-└── scenes/                # All Godot scenes
-    ├── main_menu.tscn
-    ├── game.tscn
-    ├── player.tscn
-    ├── planet.tscn
-    ├── black_hole.tscn
-    ├── meteor.tscn
-    ├── asteroid.tscn
-    ├── solar_flare.tscn
-    ├── fuel_pickup.tscn
-    ├── repair_kit.tscn
-    ├── upgrade.tscn
-    ├── hud.tscn
-    ├── pause_menu.tscn
-    └── game_over.tscn
-```
+Perform orbital maneuvers and gravity-assisted escapes
 
-## How to Build & Run
+Master physics-based movement for survival
 
-1. Open Godot 4.x
-2. Import the `Main game` folder as a project
-3. Press **Play** (F5) to test locally
-4. For HTML5 export:
-   - Project → Export → Web
-   - Export Project → Choose a folder
-   - Zip the output files
-   - Upload to itch.io (set "Kind of project" to HTML)
+Survive Cosmic Hazards
 
-## itch.io Optimization Notes
+Face an increasingly dangerous star system:
 
-- Uses the **Compatibility** renderer for broad WebGL support
-- No external assets - all visuals drawn via `_draw()` and CPUParticles2D
-- Zero textures - tiny build size
-- Keyboard-only controls - no right-click issues in browsers
-- Thread support disabled for maximum browser compatibility
+Meteor storms
+Asteroid fields
+Solar flares
+Black hole gravity pulls
+Escalating environmental threats
+Upgrade Your Ship
 
-"# Orbit-Survivor" 
+Collect fuel and resources to improve:
+
+Thrusters
+Shields
+Fuel capacity
+Gravity stabilizers
+Survival efficiency
+Endless Survival Challenge
+Survive as long as possible
+Beat your high score
+Difficulty increases over time
+Every run becomes a new test of skill
+🎮 Gameplay Loop
+
+Explore → Slingshot → Collect → Upgrade → Survive → Repeat
+
+Easy to learn, hard to master.
+
+⚡ Why It’s Different
+
+Orbit Survivor combines:
+
+Arcade survival
+Space physics
+Roguelike progression
+Skill-based movement
+
+Every close call feels earned.
+
+🕹 Controls
+WASD / Arrow Keys — Move
+Space — Boost
+Shift — Special ability (if enabled)
+#
+💀 Can You Escape the Dying Star?
+
+Outrun collapsing space, resist black holes, and push survival to its limits.
+
+How long can you survive?
