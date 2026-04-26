@@ -66,6 +66,13 @@ Shift — Special ability (if enabled)
 Outrun collapsing space, resist black holes, and push survival to its limits.  
 
 
-Althrough some of the parts of code , Grapics are created by using AI.
+
 
 How long can you survive?
+
+
+
+
+
+
+Althrough some of the parts of code , Grapics are created by using AI.
